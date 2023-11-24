@@ -1,3 +1,4 @@
+import { type Tag } from "@prisma/client";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -11,5 +12,9 @@ export function getInitials(name: string) {
     .map((n) => n[0])
     .slice(0, 2)
     .join("");
+}
+
+export function valid(tags: Tag[]) {
+  return tags.length === 0;
 }
 
