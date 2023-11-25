@@ -1,0 +1,7 @@
+cmake
+dlib
+opencv-python
+matplotlib
+numpy
+tqdm
+flask
