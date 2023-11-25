@@ -9,15 +9,11 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     return new NextResponse("URL not found.", { status: 400 });
   }
 
-  const { tags } = (await fetch(`${req.nextUrl.origin}/api/flask`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      url,
-    }),
-  }).then((res) => res.json())) as {
-    tags: { timestamp: number; type: string }[];
-  };
+  const tags = [
+    { timestamp: 1, type: "blur" },
+    { timestamp: 1, type: "lipsync" },
+    { timestamp: 1, type: "noise" },
+  ];
 
   return NextResponse.json({ tags });
 }
